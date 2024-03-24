@@ -8,7 +8,7 @@ target_sources( base
 
 target_sources( base
   PRIVATE
-	visitor/DebugVisitor.cpp
+	visitor/DebugVisitor.cpp visitor/SerialisateurVisitor.cpp
 )
 
 target_sources( base

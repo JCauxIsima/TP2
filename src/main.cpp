@@ -11,6 +11,7 @@
 #include "gui/Fleche.hpp"
 
 #include "visitor/DebugVisitor.hpp"
+#include "visitor/SerialisateurVisitor.hpp"
 
 #include <QApplication>
 
@@ -137,7 +138,11 @@ int main(int argc, char* argv[])
 		}
 		case 7:
 		{
-			// Serialisation
+			int idASerialiser = 0;
+			std::cout << "Quel id ?" << std::endl;
+			std::cin >> idASerialiser;
+			visitor::SerialisateurVisitor serialisateurVisitor;
+			objets[idASerialiser]->accept(serialisateurVisitor);
 			break;
 		}
 		}
