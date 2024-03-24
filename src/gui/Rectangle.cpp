@@ -18,6 +18,7 @@ void Rectangle::deplacer(const Position& nouvellePos)
 {
 	mBasDroite += nouvellePos - mHautGauche;
 	mHautGauche = nouvellePos;
+	envoyerNotif();
 }
 
 void Rectangle::peindre()

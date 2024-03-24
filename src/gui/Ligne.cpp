@@ -18,6 +18,7 @@ void Ligne::deplacer(const Position& nouvellePos)
 {
 	mBasDroite += nouvellePos - mHautGauche;
 	mHautGauche = nouvellePos;
+	envoyerNotif();
 }
 
 void Ligne::peindre()

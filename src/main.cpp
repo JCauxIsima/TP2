@@ -13,12 +13,15 @@
 #include "visitor/DebugVisitor.hpp"
 #include "visitor/SerialisateurVisitor.hpp"
 
+#include "observer/AffichageDebugMouvement.hpp"
+
 #include <QApplication>
 
 #include <iostream>
 #include <iterator>
 #include <memory>
 #include <random>
+#include <utility>
 #include <vector>
 
 gui::Distance createRandomDistance()
@@ -77,6 +80,7 @@ int main(int argc, char* argv[])
 {
   QApplication app(argc, argv);
 
+	observer::AffichageDebugMouvement mouvementObserver;
 	std::vector<std::unique_ptr<gui::ObjetGraphique>> objets;
 
 	while (true)
@@ -96,7 +100,13 @@ int main(int argc, char* argv[])
 		{
 		case 0: break;
 		case 1: break;
-		case 2: objets.emplace_back(createRandomOG()); break;
+		case 2:
+		{
+			auto objet = createRandomOG();
+			objet->ajout(&mouvementObserver);
+			objets.emplace_back(std::move(objet));
+			break;
+		}
 		case 3:
 		{
 			int idASuppr = 0;

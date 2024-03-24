@@ -3,12 +3,17 @@ add_library( base )
 
 target_sources( base
   PRIVATE
-	gui/Distance.cpp gui/Position.cpp gui/Rond.cpp gui/Rectangle.cpp gui/Ligne.cpp gui/Fleche.cpp
+	gui/ObjetGraphique.cpp gui/Distance.cpp gui/Position.cpp gui/Rond.cpp gui/Rectangle.cpp gui/Ligne.cpp gui/Fleche.cpp
 )
 
 target_sources( base
   PRIVATE
 	visitor/DebugVisitor.cpp visitor/SerialisateurVisitor.cpp
+)
+
+target_sources( base
+  PRIVATE
+	observer/AffichageDebugMouvement.cpp
 )
 
 target_sources( base

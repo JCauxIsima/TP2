@@ -18,6 +18,7 @@ Rond::Rond(Position centre, Distance rayon)
 void Rond::deplacer(const Position& nouvellePos)
 {
 	mCentre = nouvellePos;
+	envoyerNotif();
 }
 
 void Rond::peindre()
