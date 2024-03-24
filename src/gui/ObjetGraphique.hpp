@@ -3,6 +3,10 @@
 
 #include "Position.hpp"
 
+namespace visitor {
+	class IVisitor;
+} // namespace visitor
+
 namespace gui {
 
 class ObjetGraphique
@@ -12,6 +16,8 @@ class ObjetGraphique
 
 		virtual void deplacer(const Position& nouvellePos) = 0;
 		virtual void peindre() = 0;
+
+		virtual void accept(visitor::IVisitor& visitor) = 0;
 };
 
 }

@@ -19,9 +19,12 @@ class Fleche : public Ligne
 
 		void peindre() override;
 
+		void accept(visitor::IVisitor& visitor) override;
+
+		SensFleche getSensFleche() const;
+
 	private:
-		// maybe_unused car ce devrait etre utilise dans peindre
-		[[maybe_unused]] SensFleche mSensFleche;
+		SensFleche mSensFleche;
 };
 
 }

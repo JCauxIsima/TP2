@@ -10,6 +10,8 @@
 #include "gui/Rectangle.hpp"
 #include "gui/Fleche.hpp"
 
+#include "visitor/DebugVisitor.hpp"
+
 #include <QApplication>
 
 #include <iostream>
@@ -126,7 +128,11 @@ int main(int argc, char* argv[])
 		}
 		case 6:
 		{
-			// Debug
+			int idADebugger = 0;
+			std::cout << "Quel id ?" << std::endl;
+			std::cin >> idADebugger;
+			visitor::DebugVisitor debugVisitor;
+			objets[idADebugger]->accept(debugVisitor);
 			break;
 		}
 		case 7:

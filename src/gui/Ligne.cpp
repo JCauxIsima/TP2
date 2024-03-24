@@ -3,6 +3,8 @@
 
 #include "Position.hpp"
 
+#include <visitor/IVisitor.hpp>
+
 #include <iostream>
 
 namespace gui {
@@ -23,4 +25,19 @@ void Ligne::peindre()
 	std::cout << "Affichage d'une ligne";
 }
 
+void Ligne::accept(visitor::IVisitor& visitor)
+{
+	visitor.visit(*this);
 }
+
+Position Ligne::getHautGauche() const
+{
+	return mHautGauche;
+}
+
+Position Ligne::getBasDroite() const
+{
+	return mBasDroite;
+}
+
+} // namespace gui

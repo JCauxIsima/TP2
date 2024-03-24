@@ -15,6 +15,11 @@ class Rond : public ObjetGraphique
 		void deplacer(const Position& nouvellePos) override;
 		void peindre() override;
 
+		void accept(visitor::IVisitor& visitor) override;
+
+		Position getCentre() const;
+		Distance getRayon() const;
+
 	private:
 		Position mCentre;
 		Distance mRayon;

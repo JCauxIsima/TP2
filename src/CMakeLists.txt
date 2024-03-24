@@ -8,6 +8,11 @@ target_sources( base
 
 target_sources( base
   PRIVATE
+	visitor/DebugVisitor.cpp
+)
+
+target_sources( base
+  PRIVATE
     module2/module2_fichier1.cpp
 )
 
