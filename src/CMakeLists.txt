@@ -18,6 +18,11 @@ target_sources( base
 
 target_sources( base
   PRIVATE
+	etat/Deplaceur.cpp etat/EtatInactif.cpp etat/EtatDebutDeplacement.cpp etat/EtatDeplacementEnCours.cpp etat/EtatClotureDeplacement.cpp etat/EtatAnnulationDeplacement.cpp
+)
+
+target_sources( base
+  PRIVATE
     module2/module2_fichier1.cpp
 )
 
